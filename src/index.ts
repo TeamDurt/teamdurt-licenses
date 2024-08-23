@@ -19,6 +19,6 @@ Bun.serve({
         });
     },
     error() {
-        return new Response("Not Found", { status: 404 });
+        return new Response("License not found. You can retrieve the latest version of the license at /latest or the version you need at /{version}", { status: 404 });
     },
 });
