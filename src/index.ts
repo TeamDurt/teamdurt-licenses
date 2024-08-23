@@ -11,7 +11,11 @@ Bun.serve({
 
         const filePath = BASE_PATH + pathname;
         const file = Bun.file(filePath);
-        return new Response(file);
+        return new Response(file, {
+            headers: {
+                "Content-Disposition": "inline"
+            }
+        });
     },
     error() {
         return new Response("Not Found", { status: 404 });
