@@ -13,6 +13,7 @@ Bun.serve({
         const file = Bun.file(filePath);
         return new Response(file, {
             headers: {
+                "Content-Type": "text/plain",
                 "Content-Disposition": "inline"
             }
         });
